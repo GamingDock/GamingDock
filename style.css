@@ -2,331 +2,81 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial, sans-serif;
 }
+
 
 body{
+
     background:#050505;
     color:white;
+
 }
 
 
-/* NAVBAR */
 
 .navbar{
-    position:fixed;
-    top:0;
-    width:100%;
-    padding:20px 50px;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:20px 50px;
+    background:#080808;
+    border-bottom:1px solid #222;
+    position:sticky;
+    top:0;
 
-    background:rgba(5,5,5,0.85);
-    backdrop-filter:blur(10px);
-
-    z-index:100;
 }
+
 
 
 .logo{
-    font-size:30px;
-    font-weight:900;
-    color:#00ff99;
 
-    text-shadow:
-    0 0 15px #00ff99;
+    font-size:28px;
+    font-weight:bold;
+    color:#00ffff;
+    text-shadow:0 0 15px #00ffff;
+
 }
+
 
 
 nav a{
+
     color:white;
     text-decoration:none;
     margin-left:25px;
-    transition:.3s;
+    font-size:18px;
+    transition:0.3s;
+
 }
+
 
 
 nav a:hover{
+
     color:#00ffff;
+
 }
 
 
-/* HERO SECTION */
+
 
 .hero{
 
-    height:100vh;
-
+    min-height:80vh;
     display:flex;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-
-    background:
-    radial-gradient(circle at top left,#00ff99,transparent 35%),
-    radial-gradient(circle at top right,#00ffff,transparent 30%),
-    radial-gradient(circle at bottom,#8a2be2,transparent 40%),
-    linear-gradient(135deg,#020617,#050505);
+    background:linear-gradient(135deg,#050505,#101020);
 
 }
 
 
 
-.hero-content h1{
-
-    font-size:65px;
-    font-weight:900;
-    letter-spacing:5px;
-
-
-    background:
-    linear-gradient(
-        90deg,
-        #00ff99,
-        #00ffff,
-        #8a2be2
-    );
-
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-
-    text-shadow:
-    0 0 25px rgba(0,255,153,.5);
-
-}
-
-
-.hero-content p{
-
-    margin:20px;
-
-    font-size:25px;
-
-    color:#eeeeee;
-
-}
-
-
-
-/* SEARCH */
-
-.search-box input{
-
-    width:350px;
-
-    padding:16px;
-
-    border:none;
-
-    outline:none;
-
-    border-radius:30px;
-
-}
-
-
-
-.search-box button{
-
-    padding:16px 30px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:#00ff99;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-
-.search-box button:hover{
-
-    background:white;
-
-}
-
-
-
-/* SECTIONS */
-
-
-.featured,
-.categories{
-
-    padding:80px 40px;
-
-    text-align:center;
-
-}
-
-
-
-h2{
-
-    font-size:40px;
-
-    margin-bottom:40px;
-
-}
-
-
-
-/* GAME CARDS */
-
-
-.game-container{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-}
-
-
-
-.game-card{
-
-    width:320px;
-
-    margin:20px;
-
-    background:#111111;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    transition:.4s;
-
-
-    box-shadow:
-    0 0 20px rgba(0,255,153,.2);
-
-}
-
-
-
-.game-card:hover{
-
-    transform:translateY(-15px);
-
-    box-shadow:
-    0 0 40px #00ff99;
-
-}
-
-
-
-.game-card img{
-
-    width:100%;
-
-    height:200px;
-
-    object-fit:cover;
-
-}
-
-
-
-.game-card h3{
-
-    margin:20px;
-
-    font-size:25px;
-
-}
-
-
-
-.game-card p{
-
-    color:#aaa;
-
-    padding:0 20px;
-
-}
-
-
-
-.game-card button{
-
-    margin:20px;
-
-    padding:12px 30px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:#00ff99;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-}
-
-
-
-/* CATEGORIES */
-
-
-.category{
-
-    display:inline-block;
-
-    margin:10px;
-
-    padding:15px 30px;
-
-    border-radius:30px;
-
-    border:1px solid #00ff99;
-
-    color:#00ff99;
-
-    transition:.3s;
-
-}
-
-
-
-.category:hover{
-
-    background:#00ff99;
-
-    color:black;
-
-}
-
-
-
-/* FOOTER */
-
-
-footer{
-
-    padding:40px;
-
-    text-align:center;
-
-    background:#020202;
-
-    color:#aaa;
-
-}
+.hero h1{
+
+    font-size:55px;
+    color:#00ffff;
+    text-shadow:0 0 20
