@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Arial', sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -23,7 +23,7 @@ body{
     justify-content:space-between;
     align-items:center;
 
-    background:rgba(0,0,0,0.8);
+    background:rgba(5,5,5,0.85);
     backdrop-filter:blur(10px);
 
     z-index:100;
@@ -34,7 +34,9 @@ body{
     font-size:30px;
     font-weight:900;
     color:#00ff99;
-    text-shadow:0 0 15px #00ff99;
+
+    text-shadow:
+    0 0 15px #00ff99;
 }
 
 
@@ -42,6 +44,7 @@ nav a{
     color:white;
     text-decoration:none;
     margin-left:25px;
+    transition:.3s;
 }
 
 
@@ -50,8 +53,7 @@ nav a:hover{
 }
 
 
-
-/* HERO */
+/* HERO SECTION */
 
 .hero{
 
@@ -63,13 +65,14 @@ nav a:hover{
 
     text-align:center;
 
-
     background:
-    radial-gradient(circle at top left,#00ff99,transparent 30%),
-    radial-gradient(circle at bottom right,#8a2be2,transparent 35%),
+    radial-gradient(circle at top left,#00ff99,transparent 35%),
+    radial-gradient(circle at top right,#00ffff,transparent 30%),
+    radial-gradient(circle at bottom,#8a2be2,transparent 40%),
     linear-gradient(135deg,#020617,#050505);
 
 }
+
 
 
 .hero-content h1{
@@ -79,7 +82,8 @@ nav a:hover{
     letter-spacing:5px;
 
 
-    background:linear-gradient(
+    background:
+    linear-gradient(
         90deg,
         #00ff99,
         #00ffff,
@@ -90,16 +94,23 @@ nav a:hover{
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 
+
+    text-shadow:
+    0 0 25px rgba(0,255,153,.5);
+
 }
 
 
 .hero-content p{
 
     margin:20px;
+
     font-size:25px;
-    color:#ddd;
+
+    color:#eeeeee;
 
 }
+
 
 
 /* SEARCH */
@@ -107,32 +118,49 @@ nav a:hover{
 .search-box input{
 
     width:350px;
-    padding:15px;
+
+    padding:16px;
+
+    border:none;
+
+    outline:none;
 
     border-radius:30px;
-    border:none;
-    outline:none;
 
 }
 
 
+
 .search-box button{
 
-    padding:15px 30px;
+    padding:16px 30px;
 
     border:none;
+
     border-radius:30px;
 
     background:#00ff99;
 
     font-weight:bold;
+
     cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.search-box button:hover{
+
+    background:white;
 
 }
 
 
 
 /* SECTIONS */
+
 
 .featured,
 .categories{
@@ -144,9 +172,11 @@ nav a:hover{
 }
 
 
+
 h2{
 
     font-size:40px;
+
     margin-bottom:40px;
 
 }
@@ -155,10 +185,13 @@ h2{
 
 /* GAME CARDS */
 
+
 .game-container{
 
     display:flex;
+
     justify-content:center;
+
     flex-wrap:wrap;
 
 }
@@ -171,13 +204,14 @@ h2{
 
     margin:20px;
 
-    background:#111;
+    background:#111111;
 
     border-radius:20px;
 
     overflow:hidden;
 
     transition:.4s;
+
 
     box-shadow:
     0 0 20px rgba(0,255,153,.2);
@@ -191,7 +225,7 @@ h2{
     transform:translateY(-15px);
 
     box-shadow:
-    0 0 35px #00ff99;
+    0 0 40px #00ff99;
 
 }
 
@@ -200,6 +234,7 @@ h2{
 .game-card img{
 
     width:100%;
+
     height:200px;
 
     object-fit:cover;
@@ -210,8 +245,9 @@ h2{
 
 .game-card h3{
 
-    font-size:25px;
     margin:20px;
+
+    font-size:25px;
 
 }
 
@@ -220,6 +256,7 @@ h2{
 .game-card p{
 
     color:#aaa;
+
     padding:0 20px;
 
 }
@@ -234,17 +271,20 @@ h2{
 
     border:none;
 
-    border-radius:25px;
+    border-radius:30px;
 
     background:#00ff99;
 
     cursor:pointer;
 
+    font-weight:bold;
+
 }
 
 
 
-/* CATEGORY */
+/* CATEGORIES */
+
 
 .category{
 
@@ -260,17 +300,30 @@ h2{
 
     color:#00ff99;
 
+    transition:.3s;
+
+}
+
+
+
+.category:hover{
+
+    background:#00ff99;
+
+    color:black;
+
 }
 
 
 
 /* FOOTER */
 
+
 footer{
 
-    text-align:center;
-
     padding:40px;
+
+    text-align:center;
 
     background:#020202;
 
