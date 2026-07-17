@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0b0b0f;
+    color: white;
+}
+
+header {
+    background: #111827;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00ff99;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: #00ff99;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #111827, #000);
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #aaa;
+    font-size: 20px;
+}
+
+.hero input {
+    margin-top: 30px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+.games {
+    padding: 40px;
+}
+
+.games h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #161b22;
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    margin: 15px;
+    box-shadow: 0 0 15px #000;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+.card p {
+    color: #aaa;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: #00ff99;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: white;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111827;
+    margin-top: 40px;
+}
