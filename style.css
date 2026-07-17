@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body{
@@ -14,16 +14,19 @@ body{
 /* NAVBAR */
 
 .navbar{
+    position:fixed;
+    top:0;
     width:100%;
     padding:20px 50px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     background:rgba(0,0,0,0.8);
     backdrop-filter:blur(10px);
-    position:fixed;
-    top:0;
-    z-index:10;
+
+    z-index:100;
 }
 
 
@@ -31,7 +34,7 @@ body{
     font-size:30px;
     font-weight:900;
     color:#00ff99;
-    letter-spacing:2px;
+    text-shadow:0 0 15px #00ff99;
 }
 
 
@@ -39,12 +42,11 @@ nav a{
     color:white;
     text-decoration:none;
     margin-left:25px;
-    font-size:16px;
 }
 
 
 nav a:hover{
-    color:#00ff99;
+    color:#00ffff;
 }
 
 
@@ -61,12 +63,11 @@ nav a:hover{
 
     text-align:center;
 
-    background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
-    url("https://images.unsplash.com/photo-1542751371-adc38448a05e");
 
-    background-size:cover;
-    background-position:center;
+    background:
+    radial-gradient(circle at top left,#00ff99,transparent 30%),
+    radial-gradient(circle at bottom right,#8a2be2,transparent 35%),
+    linear-gradient(135deg,#020617,#050505);
 
 }
 
@@ -74,7 +75,20 @@ nav a:hover{
 .hero-content h1{
 
     font-size:65px;
-    letter-spacing:3px;
+    font-weight:900;
+    letter-spacing:5px;
+
+
+    background:linear-gradient(
+        90deg,
+        #00ff99,
+        #00ffff,
+        #8a2be2
+    );
+
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 
 }
 
@@ -83,25 +97,18 @@ nav a:hover{
 
     margin:20px;
     font-size:25px;
-    color:#ccc;
+    color:#ddd;
 
 }
-
 
 
 /* SEARCH */
 
-.search-box{
-
-    margin-top:30px;
-
-}
-
-
 .search-box input{
 
     width:350px;
-    padding:16px;
+    padding:15px;
+
     border-radius:30px;
     border:none;
     outline:none;
@@ -111,10 +118,13 @@ nav a:hover{
 
 .search-box button{
 
-    padding:16px 30px;
-    border-radius:30px;
+    padding:15px 30px;
+
     border:none;
+    border-radius:30px;
+
     background:#00ff99;
+
     font-weight:bold;
     cursor:pointer;
 
@@ -127,7 +137,8 @@ nav a:hover{
 .featured,
 .categories{
 
-    padding:80px 50px;
+    padding:80px 40px;
+
     text-align:center;
 
 }
@@ -153,9 +164,11 @@ h2{
 }
 
 
+
 .game-card{
 
     width:320px;
+
     margin:20px;
 
     background:#111;
@@ -166,16 +179,19 @@ h2{
 
     transition:.4s;
 
-    box-shadow:0 0 20px rgba(0,255,153,.15);
+    box-shadow:
+    0 0 20px rgba(0,255,153,.2);
 
 }
 
 
+
 .game-card:hover{
 
-    transform:translateY(-15px) scale(1.03);
+    transform:translateY(-15px);
 
-    box-shadow:0 0 35px #00ff99;
+    box-shadow:
+    0 0 35px #00ff99;
 
 }
 
@@ -185,39 +201,36 @@ h2{
 
     width:100%;
     height:200px;
+
     object-fit:cover;
 
 }
 
 
-.card-content{
 
-    padding:25px;
-
-}
-
-
-.card-content h3{
+.game-card h3{
 
     font-size:25px;
-    margin-bottom:15px;
+    margin:20px;
 
 }
 
 
-.card-content p{
+
+.game-card p{
 
     color:#aaa;
+    padding:0 20px;
 
 }
 
 
 
-.card-content button{
+.game-card button{
 
-    margin-top:20px;
+    margin:20px;
 
-    padding:12px 25px;
+    padding:12px 30px;
 
     border:none;
 
@@ -227,29 +240,25 @@ h2{
 
     cursor:pointer;
 
-    font-weight:bold;
-
 }
 
 
 
-/* CATEGORIES */
+/* CATEGORY */
 
-.category-box span{
+.category{
 
     display:inline-block;
 
-    padding:15px 30px;
-
     margin:10px;
+
+    padding:15px 30px;
 
     border-radius:30px;
 
-    background:#111;
+    border:1px solid #00ff99;
 
     color:#00ff99;
-
-    border:1px solid #00ff99;
 
 }
 
@@ -263,7 +272,7 @@ footer{
 
     padding:40px;
 
-    background:#080808;
+    background:#020202;
 
     color:#aaa;
 
