@@ -1,37 +1,39 @@
-// Gaming Dock JavaScript
+// Gaming Dock Script
 
-// Search Function
-function searchGames() {
-    let input = document.getElementById("searchInput").value.toLowerCase();
-    let cards = document.querySelectorAll(".game-card");
+document.addEventListener("DOMContentLoaded", () => {
 
-    cards.forEach(card => {
-        let title = card.querySelector("h3").textContent.toLowerCase();
+    const searchInput = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
 
-        if (title.includes(input)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
+    const categories = document.querySelectorAll(".category");
+
+    // Search Button
+    if (searchBtn) {
+        searchBtn.addEventListener("click", () => {
+
+            const searchText = searchInput.value.trim();
+
+            if (searchText === "") {
+                alert("Please enter a game name.");
+                return;
+            }
+
+            alert(`Search feature is ready.\nYou searched for: ${searchText}`);
+        });
+    }
+
+    // Category Buttons
+    categories.forEach(category => {
+
+        category.addEventListener("click", () => {
+
+            const categoryName = category.textContent.trim();
+
+            alert(`${categoryName} category selected.\nGames will appear here when added.`);
+        });
+
     });
-}
 
-// Smooth Scroll for Navigation
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function(e) {
-        e.preventDefault();
+    console.log("Gaming Dock Loaded Successfully");
 
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if (target) {
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    });
 });
-
-// Welcome Message
-window.onload = function () {
-    console.log("Welcome to Gaming Dock");
-};
