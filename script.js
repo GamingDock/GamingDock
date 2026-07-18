@@ -1,39 +1,30 @@
-// Gaming Dock Script
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+const searchBtn = document.getElementById("searchBtn");
+const searchInput = document.getElementById("searchInput");
 
-    const searchInput = document.getElementById("searchInput");
-    const searchBtn = document.getElementById("searchBtn");
+if (searchBtn) {
 
-    const categories = document.querySelectorAll(".category");
+searchBtn.addEventListener("click", function () {
 
-    // Search Button
-    if (searchBtn) {
-        searchBtn.addEventListener("click", () => {
+const searchValue = searchInput.value.trim().toLowerCase();
 
-            const searchText = searchInput.value.trim();
+if (searchValue === "roblox") {
 
-            if (searchText === "") {
-                alert("Please enter a game name.");
-                return;
-            }
+window.location.href = "game.html";
 
-            alert(`Search feature is ready.\nYou searched for: ${searchText}`);
-        });
-    }
+} else if (searchValue === "") {
 
-    // Category Buttons
-    categories.forEach(category => {
+alert("Please enter a game name.");
 
-        category.addEventListener("click", () => {
+} else {
 
-            const categoryName = category.textContent.trim();
+alert("Game not found.");
 
-            alert(`${categoryName} category selected.\nGames will appear here when added.`);
-        });
+}
 
-    });
+});
 
-    console.log("Gaming Dock Loaded Successfully");
+}
 
 });
