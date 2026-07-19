@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 html{
@@ -12,8 +12,8 @@ html{
 body{
     background:
     linear-gradient(
-    rgba(5,5,5,0.75),
-    rgba(20,0,0,0.85)
+    rgba(0,0,0,0.75),
+    rgba(20,0,0,0.80)
     ),
     url("images/red-theme.jpg");
 
@@ -22,7 +22,6 @@ body{
     background-attachment:fixed;
 
     color:white;
-    min-height:100vh;
 }
 
 /* NAVBAR */
@@ -32,18 +31,22 @@ body{
     justify-content:space-between;
     align-items:center;
     padding:20px 50px;
-    background:rgba(0,0,0,0.85);
+
+    background:rgba(0,0,0,0.8);
+
     backdrop-filter:blur(10px);
+
     position:sticky;
     top:0;
     z-index:1000;
-    border-bottom:1px solid rgba(255,0,0,0.3);
+
+    border-bottom:1px solid rgba(255,0,0,0.2);
 }
 
 .logo{
+    color:#ff4444;
     font-size:32px;
-    font-weight:bold;
-    color:#ff3b3b;
+    font-weight:700;
     text-decoration:none;
 
     text-shadow:
@@ -53,7 +56,7 @@ body{
 
 nav{
     display:flex;
-    gap:25px;
+    gap:30px;
 }
 
 nav a{
@@ -64,7 +67,7 @@ nav a{
 }
 
 nav a:hover{
-    color:#ff3b3b;
+    color:#ff4444;
 }
 
 .nav-tools{
@@ -90,13 +93,12 @@ nav a:hover{
 }
 
 .login-btn{
-    padding:10px 20px;
-    border:none;
-    border-radius:30px;
-    background:#ff2b2b;
+    background:#ff3333;
     color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:30px;
     cursor:pointer;
-    font-weight:bold;
 
     box-shadow:0 0 15px red;
 }
@@ -104,10 +106,12 @@ nav a:hover{
 /* HERO */
 
 .hero{
-    min-height:90vh;
+    min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
     padding:30px;
 }
@@ -117,34 +121,32 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:75px;
-    color:#ff4040;
+    font-size:80px;
+    color:#ff4444;
 
     text-shadow:
     0 0 15px red,
     0 0 30px red,
-    0 0 50px red;
+    0 0 60px red;
 
     margin-bottom:25px;
 }
 
 .hero p{
     font-size:24px;
-    color:#e0e0e0;
+    color:#ddd;
     margin-bottom:35px;
 }
-
-/* BUTTONS */
 
 .hero-buttons button{
     background:
     linear-gradient(
     45deg,
     #ff0000,
-    #ff5a5a);
+    #ff6666);
 
-    color:white;
     border:none;
+    color:white;
 
     padding:15px 35px;
     margin:10px;
@@ -156,10 +158,10 @@ nav a:hover{
 
     cursor:pointer;
 
+    transition:.3s;
+
     box-shadow:
     0 0 15px rgba(255,0,0,.6);
-
-    transition:.3s;
 }
 
 .hero-buttons button:hover{
@@ -170,64 +172,61 @@ nav a:hover{
     0 0 40px red;
 }
 
-/* SECTIONS */
+/* FEATURED */
 
-.featured,
-.categories,
-.news,
-.about{
-    padding:80px 8%;
+.featured{
+    padding:100px 10%;
 }
 
-.featured h2,
-.categories h2,
-.news h2,
-.about h2{
+.featured h2{
     text-align:center;
-    margin-bottom:40px;
-    color:#ff4040;
-    font-size:38px;
+    font-size:42px;
+    margin-bottom:50px;
+
+    color:#ff4444;
 
     text-shadow:
-    0 0 10px red;
+    0 0 15px red;
 }
-
-/* GAME CARDS */
 
 .games-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
     gap:30px;
 }
 
 .game-card{
-    background:rgba(0,0,0,0.55);
+    background:
+    rgba(0,0,0,0.55);
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(10px);
 
-    border:1px solid rgba(255,0,0,0.25);
+    border:
+    1px solid rgba(255,0,0,0.25);
 
     border-radius:20px;
 
     padding:30px;
 
-    transition:.3s;
+    transition:.4s;
 }
 
 .game-card:hover{
     transform:translateY(-10px);
 
     box-shadow:
-    0 0 25px rgba(255,0,0,.6);
+    0 0 30px rgba(255,0,0,.5);
 }
 
 .game-card h3{
-    color:#ff5050;
+    color:#ff5555;
     margin-bottom:15px;
 }
 
 .game-card p{
-    color:#d0d0d0;
+    color:#ddd;
     margin-bottom:20px;
 }
 
@@ -236,88 +235,115 @@ nav a:hover{
 
     padding:12px 25px;
 
-    background:#ff2a2a;
-
+    background:#ff3333;
     color:white;
 
     text-decoration:none;
 
     border-radius:10px;
 
-    box-shadow:0 0 15px red;
+    box-shadow:
+    0 0 15px red;
 }
 
 /* CATEGORIES */
 
+.categories{
+    padding:100px 10%;
+}
+
+.categories h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:40px;
+    color:#ff4444;
+}
+
 .category-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
     gap:20px;
 }
 
 .category-card{
-    background:rgba(0,0,0,0.55);
-
-    border:1px solid rgba(255,0,0,.25);
-
-    border-radius:15px;
+    background:
+    rgba(0,0,0,0.55);
 
     padding:20px;
 
     text-align:center;
 
-    font-weight:bold;
+    border-radius:15px;
+
+    border:
+    1px solid rgba(255,0,0,.2);
 
     transition:.3s;
 }
 
 .category-card:hover{
+    background:#ff2222;
     transform:translateY(-5px);
-
-    background:#ff2020;
 }
 
 /* NEWS */
 
+.news{
+    padding:100px 10%;
+}
+
+.news h2{
+    text-align:center;
+    color:#ff4444;
+    margin-bottom:30px;
+}
+
 .news-card{
-    background:rgba(0,0,0,0.55);
-
-    border:1px solid rgba(255,0,0,.25);
-
-    border-radius:20px;
+    background:
+    rgba(0,0,0,.55);
 
     padding:30px;
+
+    border-radius:20px;
 
     text-align:center;
 }
 
 /* ABOUT */
 
+.about{
+    padding:100px 10%;
+    text-align:center;
+}
+
+.about h2{
+    color:#ff4444;
+    margin-bottom:20px;
+}
+
 .about p{
     max-width:900px;
     margin:auto;
-
-    text-align:center;
-
     line-height:1.8;
-
-    color:#ddd;
 }
 
 /* FOOTER */
 
 footer{
-    background:rgba(0,0,0,0.9);
-
     text-align:center;
+    padding:40px;
 
-    padding:30px;
+    background:#050505;
 
-    border-top:1px solid rgba(255,0,0,.25);
+    border-top:
+    1px solid rgba(255,0,0,.2);
 }
 
 footer h3{
-    color:#ff4040;
+    color:#ff4444;
     margin-bottom:10px;
 }
 
@@ -342,12 +368,5 @@ footer h3{
 
     .hero p{
         font-size:18px;
-    }
-
-    .featured,
-    .categories,
-    .news,
-    .about{
-        padding:60px 20px;
     }
 }
