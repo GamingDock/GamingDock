@@ -10,7 +10,6 @@ body{
     color:#ffffff;
 }
 
-
 /* Navbar */
 
 .navbar{
@@ -19,6 +18,9 @@ body{
     align-items:center;
     padding:20px 50px;
     background:#0b0b0b;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
@@ -32,12 +34,12 @@ nav a{
     color:white;
     text-decoration:none;
     margin-left:20px;
+    transition:0.3s;
 }
 
 nav a:hover{
     color:#00eaff;
 }
-
 
 /* Hero */
 
@@ -62,12 +64,13 @@ nav a:hover{
     font-size:22px;
 }
 
-
 /* Search */
 
 .search-box{
     display:flex;
     gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 .search-box input{
@@ -78,7 +81,6 @@ nav a:hover{
     background:#111;
     color:white;
 }
-
 
 button{
     padding:14px 25px;
@@ -94,8 +96,7 @@ button:hover{
     box-shadow:0 0 20px #00eaff;
 }
 
-
-/* Cards */
+/* Sections */
 
 .featured,
 .categories,
@@ -104,11 +105,12 @@ button:hover{
     text-align:center;
 }
 
-
 h2{
     color:#00eaff;
+    margin-bottom:20px;
 }
 
+/* Game Cards */
 
 .game-container{
     display:flex;
@@ -117,29 +119,40 @@ h2{
     flex-wrap:wrap;
 }
 
-
 .game-card{
-    width:300px;
-    padding:30px;
+    width:320px;
+    padding:25px;
     background:#111;
     border-radius:20px;
     border:1px solid #222;
+    text-align:center;
+    transition:0.3s;
 }
-
 
 .game-card:hover{
     border-color:#00eaff;
     box-shadow:0 0 25px #00eaff;
+    transform:translateY(-5px);
 }
 
+.game-card img{
+    width:140px;
+    height:140px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 15px auto;
+}
 
 .game-card h3{
     color:#00eaff;
     margin-bottom:15px;
 }
 
+.game-card p{
+    line-height:1.6;
+}
 
-/* Categories */
+/* Category Buttons */
 
 .category{
     display:inline-block;
@@ -149,8 +162,13 @@ h2{
     border-radius:30px;
     color:white;
     text-decoration:none;
+    transition:0.3s;
 }
 
+.category:hover{
+    background:#00eaff;
+    color:#000;
+}
 
 /* Footer */
 
@@ -158,4 +176,28 @@ footer{
     text-align:center;
     padding:30px;
     background:#0b0b0b;
+    margin-top:30px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .search-box input{
+        width:250px;
+    }
+
+    .game-card{
+        width:90%;
+    }
 }
