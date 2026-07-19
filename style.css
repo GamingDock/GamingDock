@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 html{
@@ -12,12 +12,17 @@ html{
 body{
     background:
     linear-gradient(
-    135deg,
-    #050505 0%,
-    #120404 50%,
-    #220808 100%);
+    rgba(5,5,5,0.75),
+    rgba(20,0,0,0.85)
+    ),
+    url("images/red-theme.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 
     color:white;
+    min-height:100vh;
 }
 
 /* NAVBAR */
@@ -26,24 +31,20 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     padding:20px 50px;
-
-    background:rgba(0,0,0,0.9);
-
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(10px);
     position:sticky;
     top:0;
     z-index:1000;
-
-    border-bottom:1px solid rgba(255,0,0,.2);
+    border-bottom:1px solid rgba(255,0,0,0.3);
 }
 
 .logo{
-    text-decoration:none;
-    color:#ff4040;
-
-    font-size:30px;
+    font-size:32px;
     font-weight:bold;
+    color:#ff3b3b;
+    text-decoration:none;
 
     text-shadow:
     0 0 10px red,
@@ -58,112 +59,115 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
+    font-weight:600;
     transition:.3s;
 }
 
 nav a:hover{
-    color:#ff4040;
+    color:#ff3b3b;
 }
 
 .nav-tools{
     display:flex;
     gap:10px;
+    align-items:center;
 }
 
-.nav-tools input,
-.nav-tools select{
+.nav-tools input{
     padding:10px 15px;
-
     border:none;
-    border-radius:25px;
+    border-radius:30px;
+    background:#111;
+    color:white;
+}
 
+.nav-tools select{
+    padding:10px;
+    border:none;
+    border-radius:30px;
     background:#111;
     color:white;
 }
 
 .login-btn{
-    border:none;
-    cursor:pointer;
-
     padding:10px 20px;
-
-    border-radius:25px;
-
+    border:none;
+    border-radius:30px;
+    background:#ff2b2b;
     color:white;
+    cursor:pointer;
+    font-weight:bold;
 
-    background:
-    linear-gradient(
-    45deg,
-    #ff0000,
-    #ff4d4d);
+    box-shadow:0 0 15px red;
 }
 
 /* HERO */
 
 .hero{
     min-height:90vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-    padding:40px;
+    padding:30px;
 }
 
 .hero-content{
-    max-width:900px;
+    max-width:1000px;
 }
 
 .hero h1{
     font-size:75px;
-
     color:#ff4040;
 
     text-shadow:
     0 0 15px red,
-    0 0 35px red;
+    0 0 30px red,
+    0 0 50px red;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .hero p{
-    font-size:22px;
-    color:#d6d6d6;
-
+    font-size:24px;
+    color:#e0e0e0;
     margin-bottom:35px;
 }
 
+/* BUTTONS */
+
 .hero-buttons button{
-    padding:15px 35px;
-
-    margin:10px;
-
-    border:none;
-    border-radius:10px;
-
-    cursor:pointer;
-
-    color:white;
-    font-weight:bold;
-
     background:
     linear-gradient(
     45deg,
     #ff0000,
-    #ff4d4d);
+    #ff5a5a);
 
-    transition:.3s;
+    color:white;
+    border:none;
+
+    padding:15px 35px;
+    margin:10px;
+
+    border-radius:12px;
+
+    font-size:17px;
+    font-weight:bold;
+
+    cursor:pointer;
 
     box-shadow:
-    0 0 15px rgba(255,0,0,.5);
+    0 0 15px rgba(255,0,0,.6);
+
+    transition:.3s;
 }
 
 .hero-buttons button:hover{
     transform:translateY(-5px);
 
     box-shadow:
-    0 0 25px red;
+    0 0 20px red,
+    0 0 40px red;
 }
 
 /* SECTIONS */
@@ -172,7 +176,7 @@ nav a:hover{
 .categories,
 .news,
 .about{
-    padding:90px 10%;
+    padding:80px 8%;
 }
 
 .featured h2,
@@ -180,37 +184,32 @@ nav a:hover{
 .news h2,
 .about h2{
     text-align:center;
-
-    font-size:40px;
-
-    margin-bottom:50px;
-
+    margin-bottom:40px;
     color:#ff4040;
+    font-size:38px;
+
+    text-shadow:
+    0 0 10px red;
 }
 
 /* GAME CARDS */
 
 .games-grid{
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:30px;
 }
 
 .game-card{
-    background:
-    rgba(255,255,255,.04);
+    background:rgba(0,0,0,0.55);
 
-    border:
-    1px solid rgba(255,0,0,.2);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,0,0,0.25);
 
     border-radius:20px;
 
     padding:30px;
-
-    text-align:center;
 
     transition:.3s;
 }
@@ -219,119 +218,102 @@ nav a:hover{
     transform:translateY(-10px);
 
     box-shadow:
-    0 0 25px rgba(255,0,0,.4);
-}
-
-.game-image{
-    font-size:65px;
-    margin-bottom:20px;
+    0 0 25px rgba(255,0,0,.6);
 }
 
 .game-card h3{
+    color:#ff5050;
     margin-bottom:15px;
 }
 
 .game-card p{
-    color:#d6d6d6;
+    color:#d0d0d0;
     margin-bottom:20px;
 }
 
 .game-btn{
     display:inline-block;
 
-    text-decoration:none;
-
     padding:12px 25px;
 
-    border-radius:10px;
+    background:#ff2a2a;
 
     color:white;
 
-    background:
-    linear-gradient(
-    45deg,
-    #ff0000,
-    #ff4d4d);
+    text-decoration:none;
+
+    border-radius:10px;
+
+    box-shadow:0 0 15px red;
 }
 
 /* CATEGORIES */
 
 .category-grid{
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
     gap:20px;
 }
 
 .category-card{
-    background:
-    rgba(255,255,255,.04);
+    background:rgba(0,0,0,0.55);
 
-    border:
-    1px solid rgba(255,0,0,.2);
-
-    padding:25px;
+    border:1px solid rgba(255,0,0,.25);
 
     border-radius:15px;
 
+    padding:20px;
+
     text-align:center;
+
+    font-weight:bold;
 
     transition:.3s;
 }
 
 .category-card:hover{
-    background:#ff0000;
-
     transform:translateY(-5px);
+
+    background:#ff2020;
 }
 
 /* NEWS */
 
 .news-card{
-    max-width:900px;
+    background:rgba(0,0,0,0.55);
 
-    margin:auto;
+    border:1px solid rgba(255,0,0,.25);
 
-    text-align:center;
+    border-radius:20px;
 
     padding:30px;
 
-    border-radius:15px;
-
-    background:
-    rgba(255,255,255,.04);
-
-    border:
-    1px solid rgba(255,0,0,.2);
+    text-align:center;
 }
 
 /* ABOUT */
 
 .about p{
     max-width:900px;
-
     margin:auto;
 
     text-align:center;
 
     line-height:1.8;
 
-    color:#d6d6d6;
+    color:#ddd;
 }
 
 /* FOOTER */
 
 footer{
+    background:rgba(0,0,0,0.9);
+
     text-align:center;
 
-    padding:35px;
+    padding:30px;
 
-    background:#050505;
-
-    border-top:
-    1px solid rgba(255,0,0,.2);
+    border-top:1px solid rgba(255,0,0,.25);
 }
 
 footer h3{
@@ -362,14 +344,10 @@ footer h3{
         font-size:18px;
     }
 
-    .nav-tools{
-        flex-direction:column;
-        width:100%;
-    }
-
-    .nav-tools input,
-    .nav-tools select,
-    .login-btn{
-        width:100%;
+    .featured,
+    .categories,
+    .news,
+    .about{
+        padding:60px 20px;
     }
 }
