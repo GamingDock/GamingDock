@@ -11,10 +11,8 @@ html{
 
 body{
     background:
-    linear-gradient(
-    rgba(0,0,0,0.75),
-    rgba(20,0,0,0.80)
-    ),
+    linear-gradient(rgba(0,0,0,0.65),
+    rgba(0,0,0,0.75)),
     url("images/red-theme.jpg");
 
     background-size:cover;
@@ -27,43 +25,43 @@ body{
 /* NAVBAR */
 
 .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 50px;
-
-    background:rgba(0,0,0,0.8);
-
-    backdrop-filter:blur(10px);
-
     position:sticky;
     top:0;
     z-index:1000;
 
-    border-bottom:1px solid rgba(255,0,0,0.2);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 50px;
+
+    background:rgba(0,0,0,.8);
+    backdrop-filter:blur(10px);
+
+    border-bottom:1px solid rgba(255,0,0,.3);
 }
 
 .logo{
+    text-decoration:none;
     color:#ff4444;
     font-size:32px;
     font-weight:700;
-    text-decoration:none;
 
     text-shadow:
     0 0 10px red,
-    0 0 20px red;
+    0 0 25px red;
 }
 
 nav{
     display:flex;
-    gap:30px;
+    gap:25px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    font-weight:600;
     transition:.3s;
+    font-weight:600;
 }
 
 nav a:hover{
@@ -76,7 +74,8 @@ nav a:hover{
     align-items:center;
 }
 
-.nav-tools input{
+.nav-tools input,
+.nav-tools select{
     padding:10px 15px;
     border:none;
     border-radius:30px;
@@ -84,23 +83,18 @@ nav a:hover{
     color:white;
 }
 
-.nav-tools select{
-    padding:10px;
-    border:none;
-    border-radius:30px;
-    background:#111;
-    color:white;
-}
-
 .login-btn{
-    background:#ff3333;
-    color:white;
     border:none;
     padding:10px 20px;
     border-radius:30px;
-    cursor:pointer;
 
-    box-shadow:0 0 15px red;
+    background:linear-gradient(
+    45deg,
+    #ff2222,
+    #ff5555);
+
+    color:white;
+    cursor:pointer;
 }
 
 /* HERO */
@@ -113,7 +107,8 @@ nav a:hover{
     align-items:center;
 
     text-align:center;
-    padding:30px;
+
+    padding:40px;
 }
 
 .hero-content{
@@ -122,72 +117,89 @@ nav a:hover{
 
 .hero h1{
     font-size:80px;
+    line-height:1.1;
+
     color:#ff4444;
 
     text-shadow:
-    0 0 15px red,
-    0 0 30px red,
-    0 0 60px red;
-
-    margin-bottom:25px;
+    0 0 20px red,
+    0 0 40px red;
 }
 
 .hero p{
-    font-size:24px;
+    margin-top:20px;
+    font-size:22px;
     color:#ddd;
-    margin-bottom:35px;
+    line-height:1.6;
+}
+
+.hero-buttons{
+    margin-top:35px;
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .hero-buttons button{
-    background:
-    linear-gradient(
-    45deg,
-    #ff0000,
-    #ff6666);
-
     border:none;
-    color:white;
 
     padding:15px 35px;
-    margin:10px;
 
     border-radius:12px;
 
-    font-size:17px;
-    font-weight:bold;
+    background:linear-gradient(
+    45deg,
+    #ff2222,
+    #ff6666);
+
+    color:white;
+
+    font-size:16px;
+    font-weight:700;
 
     cursor:pointer;
 
     transition:.3s;
 
     box-shadow:
-    0 0 15px rgba(255,0,0,.6);
+    0 0 15px rgba(255,0,0,.5);
 }
 
 .hero-buttons button:hover{
     transform:translateY(-5px);
 
     box-shadow:
-    0 0 20px red,
+    0 0 25px red,
     0 0 40px red;
 }
 
-/* FEATURED */
+/* SECTIONS */
 
-.featured{
-    padding:100px 10%;
+.featured,
+.categories,
+.news,
+.about{
+    padding:80px 10%;
 }
 
-.featured h2{
+.featured h2,
+.categories h2,
+.news h2,
+.about h2{
     text-align:center;
-    font-size:42px;
-    margin-bottom:50px;
+    margin-bottom:40px;
 
     color:#ff4444;
 
+    font-size:40px;
+
     text-shadow:
-    0 0 15px red;
+    0 0 10px red;
 }
+
+/* GAME CARDS */
 
 .games-grid{
     display:grid;
@@ -198,66 +210,49 @@ nav a:hover{
 }
 
 .game-card{
-    background:
-    rgba(0,0,0,0.55);
-
-    backdrop-filter:blur(10px);
+    background:rgba(0,0,0,.55);
 
     border:
-    1px solid rgba(255,0,0,0.25);
+    1px solid rgba(255,0,0,.25);
 
     border-radius:20px;
 
-    padding:30px;
+    padding:25px;
 
-    transition:.4s;
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
 }
 
 .game-card:hover{
     transform:translateY(-10px);
 
     box-shadow:
-    0 0 30px rgba(255,0,0,.5);
+    0 0 25px rgba(255,0,0,.5);
 }
 
 .game-card h3{
-    color:#ff5555;
     margin-bottom:15px;
-}
-
-.game-card p{
-    color:#ddd;
-    margin-bottom:20px;
+    color:#ff5555;
 }
 
 .game-btn{
     display:inline-block;
 
+    margin-top:15px;
+
     padding:12px 25px;
 
     background:#ff3333;
+
     color:white;
 
     text-decoration:none;
 
     border-radius:10px;
-
-    box-shadow:
-    0 0 15px red;
 }
 
-/* CATEGORIES */
-
-.categories{
-    padding:100px 10%;
-}
-
-.categories h2{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:40px;
-    color:#ff4444;
-}
+/* CATEGORY */
 
 .category-grid{
     display:grid;
@@ -269,12 +264,11 @@ nav a:hover{
 }
 
 .category-card{
-    background:
-    rgba(0,0,0,0.55);
-
     padding:20px;
 
     text-align:center;
+
+    background:rgba(0,0,0,.55);
 
     border-radius:15px;
 
@@ -285,58 +279,43 @@ nav a:hover{
 }
 
 .category-card:hover{
-    background:#ff2222;
+    background:#ff3333;
     transform:translateY(-5px);
 }
 
 /* NEWS */
 
-.news{
-    padding:100px 10%;
-}
-
-.news h2{
-    text-align:center;
-    color:#ff4444;
-    margin-bottom:30px;
-}
-
 .news-card{
-    background:
-    rgba(0,0,0,.55);
+    background:rgba(0,0,0,.55);
 
     padding:30px;
 
-    border-radius:20px;
+    border-radius:15px;
 
     text-align:center;
 }
 
 /* ABOUT */
 
-.about{
-    padding:100px 10%;
-    text-align:center;
-}
-
-.about h2{
-    color:#ff4444;
-    margin-bottom:20px;
-}
-
 .about p{
     max-width:900px;
     margin:auto;
+
+    text-align:center;
+
     line-height:1.8;
+
+    color:#ddd;
 }
 
 /* FOOTER */
 
 footer{
-    text-align:center;
-    padding:40px;
-
     background:#050505;
+
+    text-align:center;
+
+    padding:30px;
 
     border-top:
     1px solid rgba(255,0,0,.2);
@@ -354,7 +333,6 @@ footer h3{
     .navbar{
         flex-direction:column;
         gap:15px;
-        padding:20px;
     }
 
     nav{
