@@ -1,23 +1,69 @@
-.nav-right{
-    display:flex;
-    align-items:center;
-    gap:10px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-.nav-search{
-    padding:10px;
-    border-radius:20px;
-    border:none;
-    background:#151b2e;
+body{
+    background:#0b1020;
     color:white;
-    width:150px;
 }
 
-.language{
+/* Navbar */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:#111827;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    text-decoration:none;
+    color:#00eaff;
+    font-size:28px;
+    font-weight:700;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00eaff;
+}
+
+.nav-tools{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.nav-tools input{
     padding:10px;
-    border-radius:20px;
     border:none;
-    background:#151b2e;
+    border-radius:20px;
+    background:#1f2937;
+    color:white;
+}
+
+.nav-tools select{
+    padding:10px;
+    border:none;
+    border-radius:20px;
+    background:#1f2937;
     color:white;
 }
 
@@ -31,6 +77,185 @@
     cursor:pointer;
 }
 
-.login-btn:hover{
-    box-shadow:0 0 15px #00eaff;
+/* Hero Section */
+
+.hero{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px;
+    background:linear-gradient(135deg,#0b1020,#151b2e);
+}
+
+.hero-content h1{
+    font-size:60px;
+    color:#00eaff;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:20px;
+    max-width:700px;
+    margin:auto;
+}
+
+.hero-buttons{
+    margin-top:30px;
+}
+
+.hero-buttons button{
+    padding:15px 25px;
+    margin:10px;
+    border:none;
+    border-radius:30px;
+    background:#00eaff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* Sections */
+
+.featured,
+.categories,
+.news,
+.about{
+    padding:80px 40px;
+}
+
+.featured h2,
+.categories h2,
+.news h2,
+.about h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#00eaff;
+}
+
+/* Games */
+
+.games-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.game-card{
+    background:#151b2e;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.game-card:hover{
+    transform:translateY(-10px);
+}
+
+.game-card img{
+    width:100%;
+    height:220px;
+    object-fit:contain;
+    background:#0b1020;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.game-card h3{
+    color:#00eaff;
+    margin-bottom:10px;
+}
+
+.game-card p{
+    margin-bottom:20px;
+}
+
+.game-btn{
+    display:inline-block;
+    padding:12px 20px;
+    background:#00eaff;
+    color:black;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+/* Categories */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+}
+
+.category-card{
+    background:#151b2e;
+    padding:20px;
+    text-align:center;
+    border-radius:12px;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.category-card:hover{
+    background:#00eaff;
+    color:black;
+}
+
+/* News */
+
+.news-card{
+    background:#151b2e;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+/* About */
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    line-height:1.8;
+}
+
+/* Footer */
+
+footer{
+    background:#111827;
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-tools{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-content h1{
+        font-size:40px;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
 }
