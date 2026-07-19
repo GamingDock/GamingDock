@@ -1,79 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gaming Dock</title>
-<link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Dock</title>
 
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
 
 <header class="navbar">
-    <div class="logo">🎮 GAMING DOCK</div>
+
+    <a href="index.html" class="logo">
+        🎮 Gaming Dock
+    </a>
 
     <nav>
         <a href="#home">Home</a>
         <a href="#games">Games</a>
         <a href="#categories">Categories</a>
+        <a href="#news">News</a>
         <a href="#about">About</a>
     </nav>
+
+    <div class="nav-tools">
+        <input type="text" placeholder="Search Games...">
+
+        <select>
+            <option>🌐 EN</option>
+            <option>UR</option>
+        </select>
+
+        <button class="login-btn">Login</button>
+    </div>
+
 </header>
 
 <section class="hero" id="home">
-    <h1>ENTER THE WORLD OF GAMING</h1>
-    <p>Premium Gaming Experience</p>
 
-    <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search Games...">
-        <button id="searchBtn">Search</button>
+    <div class="hero-content">
+
+        <h1>WELCOME TO GAMING DOCK</h1>
+
+        <p>
+            Discover the best games, explore new worlds and enjoy premium gaming experiences.
+        </p>
+
+        <div class="hero-buttons">
+            <button>Explore Games</button>
+            <button>Learn More</button>
+        </div>
+
     </div>
+
 </section>
 
 <section class="featured" id="games">
 
     <h2>🔥 Featured Games</h2>
 
-    <div class="game-container">
+    <div class="games-grid">
 
         <div class="game-card">
-
-            <img src="images/images.jpg" alt="Roblox">
-
-            <h3>Roblox</h3>
-
-            <p>
-                Create, play and explore millions of experiences created by players around the world.
-            </p>
-
-            <p><b>🌍 Category:</b> Open World</p>
-
-            <br>
-
-            <a href="game.html" class="category">
-                View Game
-            </a>
-
+            <h3>Coming Soon</h3>
+            <p>Your first game will appear here.</p>
         </div>
 
         <div class="game-card">
+            <h3>Coming Soon</h3>
+            <p>Your second game will appear here.</p>
+        </div>
 
-            <img src="images/minecraft-logo.png" alt="Minecraft">
-
-            <h3>Minecraft</h3>
-
-            <p>
-                Build, explore and survive in an endless block world full of adventures.
-            </p>
-
-            <p><b>🌍 Category:</b> Open World</p>
-
-            <br>
-
-            <a href="minecraft.html" class="category">
-                View Game
-            </a>
-
+        <div class="game-card">
+            <h3>Coming Soon</h3>
+            <p>More games will be added later.</p>
         </div>
 
     </div>
@@ -82,15 +84,27 @@
 
 <section class="categories" id="categories">
 
-    <h2>🎯 Game Categories</h2>
+    <h2>🎯 Categories</h2>
 
-    <br>
+    <div class="category-grid">
 
-    <a href="#games" class="category">Action</a>
-    <a href="#games" class="category">Racing</a>
-    <a href="#games" class="category">Adventure</a>
-    <a href="#games" class="category">Horror</a>
-    <a href="#games" class="category">Open World</a>
+        <div class="category-card">Action</div>
+        <div class="category-card">Adventure</div>
+        <div class="category-card">Open World</div>
+        <div class="category-card">Racing</div>
+        <div class="category-card">Horror</div>
+
+    </div>
+
+</section>
+
+<section class="news" id="news">
+
+    <h2>📰 Latest News</h2>
+
+    <div class="news-card">
+        Gaming news and updates will appear here.
+    </div>
 
 </section>
 
@@ -98,18 +112,16 @@
 
     <h2>About Gaming Dock</h2>
 
-    <br>
-
     <p>
-        Gaming Dock is a premium gaming platform where gamers can explore,
-        discover and enjoy new gaming experiences.
+        Gaming Dock is a modern gaming platform built for gamers who want to discover,
+        explore and enjoy the latest gaming experiences.
     </p>
 
 </section>
 
 <footer>
 
-    <h3>🎮 GAMING DOCK</h3>
+    <h3>🎮 Gaming Dock</h3>
 
     <p>The Future Of Gaming</p>
 
