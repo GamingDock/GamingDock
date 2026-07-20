@@ -11,8 +11,8 @@ html{
 
 body{
     background:
-    linear-gradient(rgba(0,0,0,0.65),
-    rgba(0,0,0,0.75)),
+    linear-gradient(rgba(0,0,0,.65),
+    rgba(0,0,0,.75)),
     url("images/red-theme.jpg");
 
     background-size:cover;
@@ -46,10 +46,7 @@ body{
     color:#ff4444;
     font-size:32px;
     font-weight:700;
-
-    text-shadow:
-    0 0 10px red,
-    0 0 25px red;
+    text-shadow:0 0 10px red,0 0 25px red;
 }
 
 nav{
@@ -60,8 +57,8 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    transition:.3s;
     font-weight:600;
+    transition:.3s;
 }
 
 nav a:hover{
@@ -87,12 +84,7 @@ nav a:hover{
     border:none;
     padding:10px 20px;
     border-radius:30px;
-
-    background:linear-gradient(
-    45deg,
-    #ff2222,
-    #ff5555);
-
+    background:linear-gradient(45deg,#ff2222,#ff5555);
     color:white;
     cursor:pointer;
 }
@@ -101,13 +93,10 @@ nav a:hover{
 
 .hero{
     min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-
     padding:40px;
 }
 
@@ -118,12 +107,8 @@ nav a:hover{
 .hero h1{
     font-size:80px;
     line-height:1.1;
-
     color:#ff4444;
-
-    text-shadow:
-    0 0 20px red,
-    0 0 40px red;
+    text-shadow:0 0 20px red,0 0 40px red;
 }
 
 .hero p{
@@ -135,44 +120,30 @@ nav a:hover{
 
 .hero-buttons{
     margin-top:35px;
-
     display:flex;
     justify-content:center;
     gap:20px;
     flex-wrap:wrap;
 }
 
-.hero-buttons button{
+.hero-buttons button,
+.game-btn{
     border:none;
-
     padding:15px 35px;
-
     border-radius:12px;
-
-    background:linear-gradient(
-    45deg,
-    #ff2222,
-    #ff6666);
-
+    background:linear-gradient(45deg,#ff2222,#ff6666);
     color:white;
-
-    font-size:16px;
+    text-decoration:none;
     font-weight:700;
-
     cursor:pointer;
-
     transition:.3s;
-
-    box-shadow:
-    0 0 15px rgba(255,0,0,.5);
+    box-shadow:0 0 15px rgba(255,0,0,.5);
 }
 
-.hero-buttons button:hover{
+.hero-buttons button:hover,
+.game-btn:hover{
     transform:translateY(-5px);
-
-    box-shadow:
-    0 0 25px red,
-    0 0 40px red;
+    box-shadow:0 0 25px red,0 0 40px red;
 }
 
 /* SECTIONS */
@@ -180,101 +151,95 @@ nav a:hover{
 .featured,
 .categories,
 .news,
-.about{
+.about,
+.screenshots{
     padding:80px 10%;
 }
 
 .featured h2,
 .categories h2,
 .news h2,
-.about h2{
+.about h2,
+.screenshots h2{
     text-align:center;
     margin-bottom:40px;
-
     color:#ff4444;
-
     font-size:40px;
-
-    text-shadow:
-    0 0 10px red;
+    text-shadow:0 0 10px red;
 }
 
 /* GAME CARDS */
 
 .games-grid{
     display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
 }
 
 .game-card{
     background:rgba(0,0,0,.55);
-
-    border:
-    1px solid rgba(255,0,0,.25);
-
+    border:1px solid rgba(255,0,0,.25);
     border-radius:20px;
-
     padding:25px;
-
     backdrop-filter:blur(10px);
-
     transition:.3s;
 }
 
 .game-card:hover{
     transform:translateY(-10px);
-
-    box-shadow:
-    0 0 25px rgba(255,0,0,.5);
+    box-shadow:0 0 25px rgba(255,0,0,.5);
 }
 
 .game-card h3{
-    margin-bottom:15px;
     color:#ff5555;
+    margin-bottom:15px;
 }
 
-.game-btn{
+.game-image{
+    font-size:60px;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.game-badge{
     display:inline-block;
-
-    margin-top:15px;
-
-    padding:12px 25px;
-
+    margin-bottom:15px;
+    padding:5px 10px;
     background:#ff3333;
+    border-radius:8px;
+    font-size:14px;
+}
 
-    color:white;
+/* SCREENSHOTS */
 
-    text-decoration:none;
+.screenshot{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+    border:2px solid #ff4444;
+    transition:.3s;
+}
 
-    border-radius:10px;
+.screenshot:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px red;
 }
 
 /* CATEGORY */
 
 .category-grid{
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
     gap:20px;
 }
 
 .category-card{
     padding:20px;
-
     text-align:center;
-
     background:rgba(0,0,0,.55);
-
     border-radius:15px;
-
-    border:
-    1px solid rgba(255,0,0,.2);
-
+    border:1px solid rgba(255,0,0,.2);
     transition:.3s;
 }
 
@@ -287,11 +252,8 @@ nav a:hover{
 
 .news-card{
     background:rgba(0,0,0,.55);
-
     padding:30px;
-
     border-radius:15px;
-
     text-align:center;
 }
 
@@ -300,11 +262,8 @@ nav a:hover{
 .about p{
     max-width:900px;
     margin:auto;
-
     text-align:center;
-
     line-height:1.8;
-
     color:#ddd;
 }
 
@@ -312,13 +271,9 @@ nav a:hover{
 
 footer{
     background:#050505;
-
     text-align:center;
-
     padding:30px;
-
-    border-top:
-    1px solid rgba(255,0,0,.2);
+    border-top:1px solid rgba(255,0,0,.2);
 }
 
 footer h3{
@@ -346,5 +301,10 @@ footer h3{
 
     .hero p{
         font-size:18px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
     }
 }
