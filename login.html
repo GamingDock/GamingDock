@@ -1,15 +1,226 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Login - Gaming Dock</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | Gaming Dock</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(rgba(0,0,0,.75),
+rgba(0,0,0,.85)),
+url("images/red-theme.jpg");
+
+background-size:cover;
+background-position:center;
+
+color:white;
+}
+
+.login-box{
+
+width:400px;
+
+background:rgba(0,0,0,.65);
+
+backdrop-filter:blur(15px);
+
+padding:40px;
+
+border-radius:20px;
+
+border:1px solid rgba(255,0,0,.3);
+
+box-shadow:
+0 0 20px rgba(255,0,0,.25);
+}
+
+.logo{
+
+text-align:center;
+
+font-size:35px;
+
+font-weight:700;
+
+color:#ff4444;
+
+margin-bottom:10px;
+
+text-shadow:
+0 0 10px red,
+0 0 25px red;
+}
+
+.subtitle{
+
+text-align:center;
+
+margin-bottom:30px;
+
+color:#ccc;
+}
+
+.input-group{
+
+margin-bottom:20px;
+}
+
+.input-group label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-weight:600;
+}
+
+.input-group input{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+outline:none;
+
+border-radius:10px;
+
+background:#111;
+
+color:white;
+}
+
+.login-btn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+font-size:16px;
+
+font-weight:700;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+45deg,
+#ff2222,
+#ff6666);
+
+color:white;
+
+transition:.3s;
+}
+
+.login-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 0 20px red;
+}
+
+.back-home{
+
+display:block;
+
+text-align:center;
+
+margin-top:20px;
+
+color:#ff6666;
+
+text-decoration:none;
+}
+
+.back-home:hover{
+
+color:white;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<h1>Gaming Dock Login</h1>
+<div class="login-box">
 
-<p>Login page is under construction...</p>
+<div class="logo">
+🎮 GAMING DOCK
+</div>
 
-<a href="index.html">Back Home</a>
+<p class="subtitle">
+Login to access your gaming library
+</p>
+
+<form onsubmit="login(event)">
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" id="email" required>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" id="password" required>
+</div>
+
+<button type="submit" class="login-btn">
+🔥 Login
+</button>
+
+</form>
+
+<a href="index.html" class="back-home">
+⬅ Back To Home
+</a>
+
+</div>
+
+<script>
+
+function login(event){
+
+event.preventDefault();
+
+localStorage.setItem("loggedIn","true");
+
+alert("Login Successful!");
+
+window.location.href="index.html";
+
+}
+
+</script>
 
 </body>
+
 </html>
