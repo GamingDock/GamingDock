@@ -4,29 +4,46 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchBtn = document.getElementById("searchBtn");
     const suggestions = document.getElementById("suggestions");
 
-    const gamesList = [
-        "Forza Horizon 4",
-        "GTA V",
-        "Dark Nightmare"
-    ];
+    /* Auto Detect Games */
 
-    /* SEARCH SUGGESTIONS */
+    function getGamesList() {
+
+        const gameTitles =
+        document.querySelectorAll(".game-card h3");
+
+        let games = [];
+
+        gameTitles.forEach(title => {
+
+            games.push(title.textContent.trim());
+
+        });
+
+        return games;
+
+    }
+
+    /* Suggestions */
 
     searchInput.addEventListener("input", function () {
 
-        const value = this.value.trim().toLowerCase();
+        const value =
+        this.value.trim().toLowerCase();
 
         suggestions.innerHTML = "";
 
-        if (value === "") {
-            return;
-        }
+        if (value === "") return;
+
+        const gamesList = getGamesList();
 
         gamesList.forEach(game => {
 
-            if (game.toLowerCase().includes(value)) {
+            if (
+                game.toLowerCase().includes(value)
+            ) {
 
-                const item = document.createElement("div");
+                const item =
+                document.createElement("div");
 
                 item.classList.add("suggestion-item");
 
@@ -48,29 +65,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    /* SEARCH FUNCTION */
+    /* Search */
 
     function searchGames() {
 
-        const value = searchInput.value.trim().toLowerCase();
+        const value =
+        searchInput.value.trim().toLowerCase();
 
-        const cards = document.querySelectorAll(".game-card");
+        const cards =
+        document.querySelectorAll(".game-card");
 
         let found = false;
 
         cards.forEach(card => {
 
-            const gameData =
-                card.getAttribute("data-game").toLowerCase();
+            const title =
+            card.querySelector("h3")
+            .textContent
+            .toLowerCase();
 
             if (
                 value === "" ||
-                gameData.includes(value)
+                title.includes(value)
             ) {
 
                 card.style.display = "block";
 
-                if (value !== "") {
+                if(value !== ""){
                     found = true;
                 }
 
@@ -85,10 +106,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (value === "") {
 
             cards.forEach(card => {
+
                 card.style.display = "block";
+
             });
 
             alert("Please enter a game name.");
+
         }
 
         else if (!found) {
@@ -96,44 +120,55 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Game not found.");
 
             cards.forEach(card => {
+
                 card.style.display = "block";
+
             });
 
         }
 
     }
 
-    /* BUTTON CLICK */
+    /* Search Button */
 
-    searchBtn.addEventListener("click", searchGames);
+    searchBtn.addEventListener(
+        "click",
+        searchGames
+    );
 
-    /* ENTER KEY */
+    /* Enter Key */
 
-    searchInput.addEventListener("keypress", function (e) {
+    searchInput.addEventListener(
+        "keypress",
+        function (e) {
 
-        if (e.key === "Enter") {
+            if (e.key === "Enter") {
 
-            e.preventDefault();
+                e.preventDefault();
 
-            searchGames();
+                searchGames();
 
-        }
-
-    });
-
-    /* CLICK OUTSIDE */
-
-    document.addEventListener("click", function (e) {
-
-        if (
-            !searchInput.contains(e.target) &&
-            !suggestions.contains(e.target)
-        ) {
-
-            suggestions.innerHTML = "";
+            }
 
         }
+    );
 
-    });
+    /* Hide Suggestions */
+
+    document.addEventListener(
+        "click",
+        function (e) {
+
+            if (
+                !searchInput.contains(e.target) &&
+                !suggestions.contains(e.target)
+            ) {
+
+                suggestions.innerHTML = "";
+
+            }
+
+        }
+    );
 
 });
