@@ -215,7 +215,15 @@ function login(event){
 
 event.preventDefault();
 
+const username =
+document.getElementById("username").value;
+
+const email =
+document.getElementById("email").value;
+
 localStorage.setItem("loggedIn","true");
+localStorage.setItem("username", username);
+localStorage.setItem("email", email);
 
 alert("Login Successful!");
 
