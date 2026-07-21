@@ -172,3 +172,43 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+const languageSelect =
+document.getElementById("languageSelect");
+
+languageSelect.addEventListener("change", function () {
+
+    const lang = this.value;
+
+    if (lang === "ur") {
+
+        document.getElementById("navHome").textContent = "ہوم";
+        document.getElementById("navGames").textContent = "گیمز";
+        document.getElementById("navCategories").textContent = "کیٹیگریز";
+        document.getElementById("navNews").textContent = "نیوز";
+        document.getElementById("navAbout").textContent = "ہمارے بارے میں";
+
+        document.getElementById("heroTitle").textContent =
+        "حتمی گیمنگ دنیا میں خوش آمدید";
+
+        document.getElementById("heroText").textContent =
+        "ایپک ایڈونچرز، ریسنگ تجربات، ہارر کہانیاں اور نئی نسل کا گیمنگ مواد دریافت کریں۔";
+
+    }
+
+    else {
+
+        document.getElementById("navHome").textContent = "Home";
+        document.getElementById("navGames").textContent = "Games";
+        document.getElementById("navCategories").textContent = "Categories";
+        document.getElementById("navNews").textContent = "News";
+        document.getElementById("navAbout").textContent = "About";
+
+        document.getElementById("heroTitle").textContent =
+        "ENTER THE ULTIMATE GAMING WORLD";
+
+        document.getElementById("heroText").textContent =
+        "Discover epic adventures, racing experiences, horror stories and next-generation gaming content.";
+
+    }
+
+});
