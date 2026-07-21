@@ -212,3 +212,15 @@ languageSelect.addEventListener("change", function () {
     }
 
 });
+const loginBtn =
+document.getElementById("loginBtn");
+
+const savedUsername =
+localStorage.getItem("username");
+
+if(savedUsername && loginBtn){
+
+    loginBtn.innerHTML =
+    "👤 " + savedUsername;
+
+}
