@@ -32,7 +32,15 @@
 
 <div class="nav-tools">
 
-<input type="text" placeholder="Search Games...">
+<input
+type="text"
+id="searchInput"
+placeholder="Search Games..."
+>
+
+<button class="login-btn" onclick="searchGames()">
+🔍
+</button>
 
 <select>
 <option>EN</option>
@@ -83,7 +91,7 @@ horror stories and next-generation gaming content.
 
 <!-- FORZA -->
 
-<div class="game-card">
+<div class="game-card" data-game="forza horizon 4 racing">
 
 <div class="game-badge">
 🔥 Trending
@@ -111,7 +119,7 @@ View Details
 
 <!-- GTA V -->
 
-<div class="game-card">
+<div class="game-card" data-game="gta 5 gta v open world">
 
 <div class="game-badge">
 🚔 Best Seller
@@ -139,7 +147,7 @@ View Details
 
 <!-- DARK NIGHTMARE -->
 
-<div class="game-card">
+<div class="game-card" data-game="dark nightmare horror">
 
 <div class="game-badge">
 👻 Horror
