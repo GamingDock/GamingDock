@@ -106,10 +106,19 @@ nav a:hover{
 }
 
 .hero h1{
+    font-family:'Montserrat',sans-serif;
     font-size:80px;
+    font-weight:900;
     line-height:1.1;
-    color:#ff4444;
-    text-shadow:0 0 20px red,0 0 40px red;
+    letter-spacing:10px;
+    text-transform:uppercase;
+    color:#ff3333;
+
+    text-shadow:
+    0 0 10px #ff0000,
+    0 0 20px #ff0000,
+    0 0 40px #ff0000,
+    0 0 60px #ff0000;
 }
 
 .hero p{
