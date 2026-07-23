@@ -224,3 +224,31 @@ if(savedUsername && loginBtn){
     "👤 " + savedUsername;
 
 }
+document.addEventListener("DOMContentLoaded", function () {
+
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    const username = localStorage.getItem("username");
+    const loggedIn = localStorage.getItem("loggedIn");
+
+    if (loggedIn === "true" && username) {
+
+        loginBtn.innerText = username;
+        loginBtn.removeAttribute("onclick");
+
+        logoutBtn.style.display = "inline-block";
+
+    }
+
+    logoutBtn.addEventListener("click", function () {
+
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("username");
+        localStorage.removeItem("email");
+
+        location.reload();
+
+    });
+
+});
