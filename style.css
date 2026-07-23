@@ -336,3 +336,28 @@ footer h3{
         align-items:center;
     }
     }
+
+.hero-content h1{
+    font-size: 75px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: #ff2b2b;
+
+    text-shadow:
+    0 0 10px #ff0000,
+    0 0 20px #ff0000,
+    0 0 40px #ff0000,
+    0 0 80px #ff0000;
+
+    margin-bottom: 20px;
+}
+
+.hero-content p{
+    font-size: 18px;
+    color: #d0d0d0;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+    letter-spacing: 2px;
+}
