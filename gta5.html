@@ -159,6 +159,25 @@ Storage: 110 GB SSD
 <p>The Future Of Gaming</p>
 
 </footer>
+  
+<script>
 
+function addFavorite(game){
+
+const loggedIn =
+localStorage.getItem("loggedIn");
+
+if(loggedIn !== "true"){
+
+alert("Please login first.");
+return;
+
+}
+
+alert(game + " added to favorites ❤️");
+
+}
+
+</script>
 </body>
 </html>
