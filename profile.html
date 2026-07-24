@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile | Gaming Dock</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+<a href="index.html" class="logo">
+🎮 GAMING DOCK
+</a>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>👤 My Profile</h1>
+
+<div class="game-card">
+
+<h3 id="profileName">Username</h3>
+
+<p id="profileEmail">Email</p>
+
+<br>
+
+<button id="logoutBtn" class="game-btn">
+🚪 Logout
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const username =
+localStorage.getItem("username");
+
+const email =
+localStorage.getItem("email");
+
+document.getElementById("profileName").innerText =
+username || "Guest";
+
+document.getElementById("profileEmail").innerText =
+email || "No Email";
+
+document.getElementById("logoutBtn")
+.addEventListener("click", function(){
+
+localStorage.removeItem("loggedIn");
+localStorage.removeItem("username");
+localStorage.removeItem("email");
+
+window.location.href="index.html";
+
+});
+
+</script>
+
+</body>
+</html>
