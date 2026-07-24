@@ -58,7 +58,25 @@ localStorage.getItem("username");
 
 const email =
 localStorage.getItem("email");
+  
+const favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
 
+document.getElementById("favoriteCount").innerText =
+favorites.length + " Games";
+
+const favoriteList =
+document.getElementById("favoriteList");
+
+favorites.forEach(game => {
+
+const p = document.createElement("p");
+
+p.innerText = "🎮 " + game;
+
+favoriteList.appendChild(p);
+
+});
 document.getElementById("profileName").innerText =
 username || "Guest";
 
