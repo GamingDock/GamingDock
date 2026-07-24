@@ -160,8 +160,6 @@ Storage: 110 GB SSD
 
 </footer>
   
-<script>
-
 function addFavorite(game){
 
 const loggedIn =
@@ -174,10 +172,27 @@ return;
 
 }
 
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+if(!favorites.includes(game)){
+
+favorites.push(game);
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
 alert(game + " added to favorites ❤️");
 
 }
+else{
 
-</script>
+alert("Already in favorites ❤️");
+
+}
+
+}
 </body>
 </html>
