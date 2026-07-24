@@ -236,6 +236,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         loginBtn.innerText = username;
         loginBtn.removeAttribute("onclick");
+        loginBtn.onclick = function(){
+window.location.href = "profile.html";
+};
 
         logoutBtn.style.display = "inline-block";
 
