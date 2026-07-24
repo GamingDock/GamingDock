@@ -370,3 +370,57 @@ footer h3{
     line-height: 1.8;
     letter-spacing: 2px;
 }
+/* MOBILE FIX */
+
+@media (max-width:768px){
+
+.navbar{
+    flex-direction:column;
+    padding:15px;
+    gap:15px;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+.nav-tools{
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.nav-tools input{
+    width:180px;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.games-grid{
+    grid-template-columns:1fr !important;
+}
+
+.game-card{
+    width:100%;
+}
+
+.category-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.featured,
+.categories,
+.news,
+.about{
+    padding:50px 20px;
+}
+
+}
