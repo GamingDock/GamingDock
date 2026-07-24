@@ -46,9 +46,25 @@ We will try to add your requested game as soon as possible.
 
 <p>
 📧 Game Requests & Support:
-<br>
-gamingdockofficial@gmail.com
 </p>
+
+<br>
+
+<a href="mailto:gamingdockofficial@gmail.com"
+class="game-btn">
+
+📧 Send Email
+
+</a>
+
+<br><br>
+
+<button class="game-btn"
+onclick="copyEmail()">
+
+📋 Copy Email
+
+</button>
 
 <br>
 
@@ -67,6 +83,20 @@ gamingdockofficial@gmail.com
 </div>
 
 </section>
+  
+  <script>
+
+function copyEmail(){
+
+navigator.clipboard.writeText(
+"gamingdockofficial@gmail.com"
+);
+
+alert("Email copied successfully!");
+
+}
+
+  </script>
 
 </body>
 </html>
