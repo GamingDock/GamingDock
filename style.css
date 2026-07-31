@@ -424,3 +424,25 @@ nav{
 }
 
 }
+.request-game{
+text-align:center;
+padding:60px 20px;
+}
+
+.request-game input,
+.request-game textarea{
+width:80%;
+max-width:500px;
+padding:12px;
+border-radius:10px;
+border:none;
+margin-top:10px;
+}
+
+.request-game button{
+padding:12px 25px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
