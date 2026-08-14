@@ -171,6 +171,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
+    document.addEventListener("DOMContentLoaded", () => {
+
+const games = document.querySelectorAll(".game-card");
+
+document.getElementById("gameCount").textContent = games.length;
+
 });
 const languageSelect =
 document.getElementById("languageSelect");
