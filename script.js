@@ -1,88 +1,134 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* =========================
+       GAME COUNT
+    ========================= */
+
+    const games = document.querySelectorAll(".game-card");
+    const gameCount = document.getElementById("gameCount");
+
+    if (gameCount) {
+        gameCount.textContent = games.length;
+    }
+
+
+    /* =========================
+       SEARCH ELEMENTS
+    ========================= */
+
     const searchInput = document.getElementById("searchInput");
     const searchBtn = document.getElementById("searchBtn");
     const suggestions = document.getElementById("suggestions");
 
-    /* Auto Detect Games */
+
+    /* =========================
+       AUTO DETECT GAMES
+    ========================= */
 
     function getGamesList() {
 
         const gameTitles =
-        document.querySelectorAll(".game-card h3");
+            document.querySelectorAll(".game-card h3");
 
-        let games = [];
+        let gamesList = [];
 
         gameTitles.forEach(title => {
 
-            games.push(title.textContent.trim());
+            gamesList.push(
+                title.textContent.trim()
+            );
 
         });
 
-        return games;
+        return gamesList;
+    }
+
+
+    /* =========================
+       SEARCH SUGGESTIONS
+    ========================= */
+
+    if (searchInput && suggestions) {
+
+        searchInput.addEventListener("input", function () {
+
+            const value =
+                this.value.trim().toLowerCase();
+
+            suggestions.innerHTML = "";
+
+            if (value === "") {
+                return;
+            }
+
+            const gamesList = getGamesList();
+
+            gamesList.forEach(game => {
+
+                if (
+                    game.toLowerCase().includes(value)
+                ) {
+
+                    const item =
+                        document.createElement("div");
+
+                    item.classList.add(
+                        "suggestion-item"
+                    );
+
+                    item.textContent = game;
+
+                    item.addEventListener(
+                        "click",
+                        function () {
+
+                            searchInput.value = game;
+
+                            suggestions.innerHTML = "";
+
+                        }
+                    );
+
+                    suggestions.appendChild(item);
+
+                }
+
+            });
+
+        });
 
     }
 
-    /* Suggestions */
 
-    searchInput.addEventListener("input", function () {
-
-        const value =
-        this.value.trim().toLowerCase();
-
-        suggestions.innerHTML = "";
-
-        if (value === "") return;
-
-        const gamesList = getGamesList();
-
-        gamesList.forEach(game => {
-
-            if (
-                game.toLowerCase().includes(value)
-            ) {
-
-                const item =
-                document.createElement("div");
-
-                item.classList.add("suggestion-item");
-
-                item.textContent = game;
-
-                item.addEventListener("click", function () {
-
-                    searchInput.value = game;
-
-                    suggestions.innerHTML = "";
-
-                });
-
-                suggestions.appendChild(item);
-
-            }
-
-        });
-
-    });
-
-    /* Search */
+    /* =========================
+       SEARCH FUNCTION
+    ========================= */
 
     function searchGames() {
 
+        if (!searchInput) return;
+
         const value =
-        searchInput.value.trim().toLowerCase();
+            searchInput.value.trim().toLowerCase();
 
         const cards =
-        document.querySelectorAll(".game-card");
+            document.querySelectorAll(".game-card");
 
         let found = false;
 
+
         cards.forEach(card => {
 
+            const titleElement =
+                card.querySelector("h3");
+
+            if (!titleElement) return;
+
             const title =
-            card.querySelector("h3")
-            .textContent
-            .toLowerCase();
+                titleElement.textContent
+                .trim()
+                .toLowerCase();
+
 
             if (
                 value === "" ||
@@ -91,17 +137,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 card.style.display = "block";
 
-                if(value !== ""){
+                if (value !== "") {
                     found = true;
                 }
 
-            } else {
+            }
+
+            else {
 
                 card.style.display = "none";
 
             }
 
         });
+
+
+        /* Empty Search */
 
         if (value === "") {
 
@@ -114,6 +165,9 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Please enter a game name.");
 
         }
+
+
+        /* Game Not Found */
 
         else if (!found) {
 
@@ -129,37 +183,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    /* Search Button */
 
-    searchBtn.addEventListener(
-        "click",
-        searchGames
-    );
+    /* =========================
+       SEARCH BUTTON
+    ========================= */
 
-    /* Enter Key */
+    if (searchBtn) {
 
-    searchInput.addEventListener(
-        "keypress",
-        function (e) {
+        searchBtn.addEventListener(
+            "click",
+            searchGames
+        );
 
-            if (e.key === "Enter") {
+    }
 
-                e.preventDefault();
 
-                searchGames();
+    /* =========================
+       ENTER KEY SEARCH
+    ========================= */
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "keypress",
+            function (e) {
+
+                if (e.key === "Enter") {
+
+                    e.preventDefault();
+
+                    searchGames();
+
+                }
 
             }
+        );
 
-        }
-    );
+    }
 
-    /* Hide Suggestions */
+
+    /* =========================
+       HIDE SUGGESTIONS
+    ========================= */
 
     document.addEventListener(
         "click",
         function (e) {
 
             if (
+                searchInput &&
+                suggestions &&
                 !searchInput.contains(e.target) &&
                 !suggestions.contains(e.target)
             ) {
@@ -171,117 +244,257 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
-    document.addEventListener("DOMContentLoaded", () => {
 
-const games = document.querySelectorAll(".game-card");
+    /* =========================
+       LANGUAGE
+    ========================= */
 
-document.getElementById("gameCount").textContent = games.length;
+    const languageSelect =
+        document.getElementById("languageSelect");
 
-});
-const languageSelect =
-document.getElementById("languageSelect");
 
-languageSelect.addEventListener("change", function () {
+    if (languageSelect) {
 
-    const lang = this.value;
+        languageSelect.addEventListener(
+            "change",
+            function () {
 
-    if (lang === "ur") {
+                const lang = this.value;
 
-        document.getElementById("navHome").textContent = "ہوم";
-        document.getElementById("navGames").textContent = "گیمز";
-        document.getElementById("navCategories").textContent = "کیٹیگریز";
-        document.getElementById("navNews").textContent = "نیوز";
-        document.getElementById("navAbout").textContent = "ہمارے بارے میں";
 
-        document.getElementById("heroTitle").textContent =
-        "حتمی گیمنگ دنیا میں خوش آمدید";
+                /* Urdu */
 
-        document.getElementById("heroText").textContent =
-        "ایپک ایڈونچرز، ریسنگ تجربات، ہارر کہانیاں اور نئی نسل کا گیمنگ مواد دریافت کریں۔";
+                if (lang === "ur") {
+
+                    const navHome =
+                        document.getElementById("navHome");
+
+                    const navGames =
+                        document.getElementById("navGames");
+
+                    const navCategories =
+                        document.getElementById("navCategories");
+
+                    const navNews =
+                        document.getElementById("navNews");
+
+                    const navAbout =
+                        document.getElementById("navAbout");
+
+                    const heroTitle =
+                        document.getElementById("heroTitle");
+
+                    const heroText =
+                        document.getElementById("heroText");
+
+
+                    if (navHome)
+                        navHome.textContent = "ہوم";
+
+                    if (navGames)
+                        navGames.textContent = "گیمز";
+
+                    if (navCategories)
+                        navCategories.textContent = "کیٹیگریز";
+
+                    if (navNews)
+                        navNews.textContent = "نیوز";
+
+                    if (navAbout)
+                        navAbout.textContent =
+                            "ہمارے بارے میں";
+
+
+                    if (heroTitle)
+                        heroTitle.textContent =
+                            "حتمی گیمنگ دنیا میں خوش آمدید";
+
+
+                    if (heroText)
+                        heroText.textContent =
+                            "ایپک ایڈونچرز، ریسنگ تجربات، ہارر کہانیاں اور نئی نسل کا گیمنگ مواد دریافت کریں.";
+
+                }
+
+
+                /* English */
+
+                else {
+
+                    const navHome =
+                        document.getElementById("navHome");
+
+                    const navGames =
+                        document.getElementById("navGames");
+
+                    const navCategories =
+                        document.getElementById("navCategories");
+
+                    const navNews =
+                        document.getElementById("navNews");
+
+                    const navAbout =
+                        document.getElementById("navAbout");
+
+                    const heroTitle =
+                        document.getElementById("heroTitle");
+
+                    const heroText =
+                        document.getElementById("heroText");
+
+
+                    if (navHome)
+                        navHome.textContent = "Home";
+
+                    if (navGames)
+                        navGames.textContent = "Games";
+
+                    if (navCategories)
+                        navCategories.textContent =
+                            "Categories";
+
+                    if (navNews)
+                        navNews.textContent = "News";
+
+                    if (navAbout)
+                        navAbout.textContent = "About";
+
+
+                    if (heroTitle)
+                        heroTitle.textContent =
+                            "ENTER THE ULTIMATE GAMING WORLD";
+
+
+                    if (heroText)
+                        heroText.textContent =
+                            "Discover epic adventures, racing experiences, horror stories and next-generation gaming content.";
+
+                }
+
+            }
+        );
 
     }
 
-    else {
 
-        document.getElementById("navHome").textContent = "Home";
-        document.getElementById("navGames").textContent = "Games";
-        document.getElementById("navCategories").textContent = "Categories";
-        document.getElementById("navNews").textContent = "News";
-        document.getElementById("navAbout").textContent = "About";
+    /* =========================
+       LOGIN
+    ========================= */
 
-        document.getElementById("heroTitle").textContent =
-        "ENTER THE ULTIMATE GAMING WORLD";
+    const loginBtn =
+        document.getElementById("loginBtn");
 
-        document.getElementById("heroText").textContent =
-        "Discover epic adventures, racing experiences, horror stories and next-generation gaming content.";
+    const logoutBtn =
+        document.getElementById("logoutBtn");
 
-    }
+    const savedUsername =
+        localStorage.getItem("username");
 
-});
-const loginBtn =
-document.getElementById("loginBtn");
+    const loggedIn =
+        localStorage.getItem("loggedIn");
 
-const savedUsername =
-localStorage.getItem("username");
 
-if(savedUsername && loginBtn){
+    if (
+        loginBtn &&
+        loggedIn === "true" &&
+        savedUsername
+    ) {
 
-    loginBtn.innerHTML =
-    "👤 " + savedUsername;
+        loginBtn.innerText =
+            "👤 " + savedUsername;
 
-}
-document.addEventListener("DOMContentLoaded", function () {
-
-    const loginBtn = document.getElementById("loginBtn");
-    const logoutBtn = document.getElementById("logoutBtn");
-
-    const username = localStorage.getItem("username");
-    const loggedIn = localStorage.getItem("loggedIn");
-
-    if (loggedIn === "true" && username) {
-
-        loginBtn.innerText = username;
         loginBtn.removeAttribute("onclick");
-        loginBtn.onclick = function(){
-window.location.href = "profile.html";
-};
 
-        logoutBtn.style.display = "inline-block";
+        loginBtn.onclick = function () {
+
+            window.location.href =
+                "profile.html";
+
+        };
 
     }
 
-    logoutBtn.addEventListener("click", function () {
 
-        localStorage.removeItem("loggedIn");
-        localStorage.removeItem("username");
-        localStorage.removeItem("email");
+    /* =========================
+       LOGOUT BUTTON
+    ========================= */
 
-        location.reload();
+    if (
+        logoutBtn &&
+        loggedIn === "true" &&
+        savedUsername
+    ) {
+
+        logoutBtn.style.display =
+            "inline-block";
+
+    }
+
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem(
+                    "loggedIn"
+                );
+
+                localStorage.removeItem(
+                    "username"
+                );
+
+                localStorage.removeItem(
+                    "email"
+                );
+
+                location.reload();
+
+            }
+        );
+
+    }
+
+});
+
+
+/* =========================
+   CATEGORY FILTER
+========================= */
+
+function filterGames(category) {
+
+    const games =
+        document.querySelectorAll(".game-card");
+
+
+    games.forEach(game => {
+
+        if (category === "all") {
+
+            game.style.display = "block";
+
+        }
+
+        else {
+
+            if (
+                game.dataset.category === category
+            ) {
+
+                game.style.display = "block";
+
+            }
+
+            else {
+
+                game.style.display = "none";
+
+            }
+
+        }
 
     });
 
-});
-
-function filterGames(category){
-
-const games = document.querySelectorAll(".game-card");
-
-games.forEach(game=>{
-
-if(category==="all"){
-game.style.display="block";
-}
-else{
-
-if(game.dataset.category===category){
-game.style.display="block";
-}
-else{
-game.style.display="none";
-}
-
-}
-
-});
-
-}
+                }
