@@ -178,6 +178,13 @@ nav a:hover{
     text-shadow:0 0 10px red;
 }
 
+.game-counter{
+text-align:center;
+font-size:24px;
+font-weight:600;
+margin:20px 0;
+}
+
 /* GAME CARDS */
 
 .games-grid{
